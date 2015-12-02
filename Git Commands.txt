@@ -1,0 +1,54 @@
+Navigation
+
+pwd			Print working directory
+clear			Clear commands
+ls			List files/folders in current dir
+ls(environment())	List objects in environment
+ls -a			List hidden/unhidden files/folders
+ls -al 			List details for hidden/unhidden folders
+cd 			Change directory
+cd..			Move to home directory
+mkdir			Make directory (create new folder)
+touch			Create empty file
+cp			Copy
+rm			Remove
+mv			Move
+echo			Print arguments
+date			Today's date
+-m			Add message using ""
+
+Configuration
+
+config --system		Applies to all users on computer
+config --global		Applies to user account
+config --local		Applies only to repos (default)
+config --list		Show which config settings are applied
+config --global.user.name "adampaulblair"
+config --global.user.email "adampaulblair@gmail.com"
+config --global core.editor "atom --wait" Specify text editor
+config --global core.autocrlf true	Set line endings/breaks preference
+config --global push.default simple	Push current branch only
+config --global push.default matching	Push all branches
+
+Using GitHub Locally
+
+git remote add origin	Add remote repo
+git clone		Make a local copy of a forked repo
+	or git init	Create an empty repo
+
+1. git add <filename>	Stage specified file (to the Index)
+	or git add *	Stage all files in the current dir
+	or git add -A	Stage all new, modified, deleted files
+	or git add .	Stage new and modified files
+	or git add -u	Stage modified and deleted files
+2. git commit -m "Message"	Commit file(s) to the HEAD
+3. git push origin <master>	Push changes to remote repo master branch
+
+git diff <filename>	Compare local file with staged file
+git rm --cached <filename>	Unstage specified file
+git log			Show list of commits
+git status		Check status of changes
+
+Steps for pushing to a remote repo: 
+
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
