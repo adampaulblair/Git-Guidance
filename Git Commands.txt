@@ -16,6 +16,7 @@ mv			Move
 echo			Print arguments
 date			Today's date
 -m			Add message using ""
+--help			Receive help on command
 
 Configuration
 
@@ -36,19 +37,33 @@ git remote add origin	Add remote repo
 git clone		Make a local copy of a forked repo
 	or git init	Create an empty repo
 
-1. git add <filename>	Stage specified file (to the Index)
+1. git init		Initializes local directory
+2. git add "filename"	Stage specified file (to the Index)
 	or git add *	Stage all files in the current dir
-	or git add -A	Stage all new, modified, deleted files
+	or git add -a	Stage all new, modified, deleted files
 	or git add .	Stage new and modified files
 	or git add -u	Stage modified and deleted files
-2. git commit -m "Message"	Commit file(s) to the HEAD
-3. git push origin <master>	Push changes to remote repo master branch
+2. git commit -m "message"	Commit file(s) to the HEAD
+3. git remote add origin <URL> 	Sets new remote repo
+3. git push origin <URL>	Push changes to remote repo master branch
 
-git diff <filename>	Compare local file with staged file
-git rm --cached <filename>	Unstage specified file
 git log			Show list of commits
 git status		Check status of changes
+git diff "filename"	Compare local file with staged file
+
+git rm --cached "filename"	Unstage specified file
+git reset HEAD "filename"	Unstage specified file
+
 
 Steps for pushing to a remote repo: 
 
 https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+
+Add a README file:
+
+echo # testrepo >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/adampaulblair/testrepo.git
+git push -u origin master
